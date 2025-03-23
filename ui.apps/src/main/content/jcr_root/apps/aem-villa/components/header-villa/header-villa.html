@@ -1,14 +1,19 @@
 <sly data-sly-use.model = "com.aemvilla.core.models.HeaderModel">
 
-    <u1 data-sly-list.item="${model.navigations}">
+    ${model.toString}
+
+    <u1 data-sly-list="${model.navigation}">
         <li>
-            text:${item.text}
-            path:${item.url}
+            text:${items.text}
+            path:${items.url}
 
         </li>
     </u1>
 
 </sly>
+
+
+
 
 
 <header class="header-area header-sticky">
