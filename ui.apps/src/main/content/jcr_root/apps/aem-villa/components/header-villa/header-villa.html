@@ -1,6 +1,25 @@
+
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <ul class="info">
+                    <li><i class="fa fa-envelope"></i> info@company.com</li>
+                    <li><i class="fa fa-map"></i> Sunny Isles Beach, FL 33160</li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <ul class="social-links">
+                    <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <sly data-sly-use.model = "com.aemvilla.core.models.HeaderModel">
 
-    ${model.toString}
+    <!-- ${model.toString}
 
     <u1 data-sly-list.items="${model.navigation}">
         <li>
@@ -8,38 +27,38 @@
             path:${items.url}
 
         </li>
-    </u1>
-
-</sly>
+    </u1> -->
 
 
 
 
 
-<header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
 
-                    <a href="#" class="logo">
-                        <h1>Villa</h1>
-                    </a>
+                        <a href="#" class="logo">
+                            <h1>Villa</h1>
+                        </a>
 
-                    <ul class="nav">
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">Properties</a></li>
-                        <li><a href="#">Property Details</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#"><i class="fa fa-calendar"></i> Schedule a visit</a></li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
+                        <ul class="nav" data-sly-list.items="${model.navigation}">
+                            <!-- <li><a href="${items.url}" class="active">${items.text}</a> -->
+                            <li><a href="${items.url}"><i class="fa fa-calendar"></i> ${items.text}</a></li>
+                            <!-- </li> -->
+                            <!-- <li class="active"><a href="${items.url}"><i class="fa fa-calendar"></i> ${items.text}</a></li> -->
 
-                </nav>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
+
+</sly>
