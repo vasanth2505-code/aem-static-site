@@ -1,13 +1,11 @@
 #base=js
 
+jquery.min.js
 bootstrap.min.js
+isotope.min.js
+owl-carousel.js
 counter.js
 custom.js
-isotope.min.js
-jquery.js
-jquery.min.js
-jquery.min.map
-jquery.slim.js
-jquery.slim.min.js
-jquery.slim.min.map
-owl-carousel.js
+
+
+
