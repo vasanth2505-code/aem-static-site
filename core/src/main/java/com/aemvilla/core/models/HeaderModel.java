@@ -14,17 +14,14 @@ import java.util.Iterator;
 import java.util.List;
 
 
-@Model(adaptables = SlingHttpServletRequest.class,
-        adapters = HeaderModel.class,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
-        resourceType = HeaderModel.RESOURCE_HEADER)
+@Model(adaptables = SlingHttpServletRequest.class, adapters = HeaderModel.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, resourceType = HeaderModel.RESOURCE_HEADER)
 
 public class HeaderModel {
 
     static final String RESOURCE_HEADER = "aem-villa/components/header-villa";
 
     @ChildResource
-     Resource navmf;
+    Resource navmf;
 
 //    @ValueMapValue
 //     List<NavigationBean> getNavigations() {
@@ -43,11 +40,13 @@ public class HeaderModel {
     public List<NavigationBean> navigation = new ArrayList<>();
 
     @PostConstruct
-    protected void init(){
+    protected void init() {
         Iterator<Resource> resourceIterator = navmf.listChildren();
-        while (resourceIterator.hasNext()){
+        while (resourceIterator.hasNext()) {
             Resource resource = resourceIterator.next();
-            navigation.add(new NavigationBean(resource.getValueMap().get("navText", String.class),resource.getValueMap().get("navUrl", String.class))) ;
+            String navText = resource.getValueMap().get("navText", String.class);
+            String navUrl = resource.getValueMap().get("navUrl", String.class);
+            navigation.add(new NavigationBean(navText, navUrl));
 
         }
 
