@@ -749,11 +749,11 @@ Banner Style
 }
 
 .main-banner .item-2 {
-  background-image: url(../images/banner-02.jpg);
+  background-image: url(/content/dam/aem-villa/banner-02.jpg);
 }
 
 .main-banner .item-3 {
-  background-image: url(../images/banner-03.jpg);
+  background-image: url(/content/dam/aem-villa/banner-03.jpg);
 }
 
 .main-banner .item span.category {
